@@ -1,0 +1,53 @@
+.main__header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.header__div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__title {
+    font-family: "Ruthie", cursive;
+    font-size: 50px;
+    font-weight: 500;
+    color: var(--yellow);
+    margin: 0px;
+    text-align: center;
+}
+
+.header__subTitle {
+    font-family: "Teko", sans-serif;
+    color: var(--black);
+    margin: 0px;
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: -10px;
+}
+
+.header__div--2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.header__btn {
+    background: var(--input-white);
+    color: var(--black);
+    font-size: 22px;
+    border-radius: 10px;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px;
+    outline-width: 0px;
+    cursor: pointer;
+}

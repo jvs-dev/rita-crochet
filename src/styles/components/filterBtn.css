@@ -1,0 +1,17 @@
+.filterBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 25px;
+    background: var(--input-white);
+    border-radius: 10px;
+    color: var(--black);
+    border: 0px;
+    outline-width: 0px;
+    min-width: none;
+    white-space: nowrap;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}

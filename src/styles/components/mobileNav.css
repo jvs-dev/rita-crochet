@@ -1,0 +1,43 @@
+.main__mobileNav {
+    display: none;
+    align-items: center;
+    grid-template-columns: auto auto auto auto;
+    width: 100%;
+    padding: 15px 20px;
+    position: fixed;
+    bottom: 0;
+    background: var(--white);
+    border-radius: 40px 40px 0px 0px;
+    z-index: 2;
+}
+
+.mobileNav__btn {
+    color: var(--black);
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background: none;
+    border: 0px;
+    outline-width: 0px;
+    display: flex;
+    row-gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobileNav__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    background: var(--input-white);
+    border-radius: 5px;
+}
+
+.mobileNav__icon.active {
+    background: var(--yellow);    
+    filter: drop-shadow(var(--yellow) 0px 0px 14px);
+}

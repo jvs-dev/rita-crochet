@@ -1,0 +1,65 @@
+.carroussel__cardAnuncy {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 380px;
+    min-width: 380px;
+    height: 220px;
+    overflow: hidden;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+.cardAnuncy__img {
+    position: absolute;    
+    width: 100%;
+}
+.cardAnuncy__div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(180deg, #1f1f1f00 69%, #1f1f1f 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-end;
+    padding: 14px;
+}
+.cardAnuncy__title {
+    width: 100%;
+    color: var(--dark-yellow);
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cardAnuncy__div--2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.cardAnuncy__p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: var(--white);
+    margin: 0px;
+    font-size: 14px;
+}
+.cardAnuncy__viewMore {
+    margin: 0px;
+    padding: 6px 25px;
+    color: var(--black);
+    background: var(--dark-yellow);
+    border-radius: 100px;
+    border: 0px;
+    outline-width: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
