@@ -35,12 +35,13 @@
 
 .productCard__img {
     width: 100%;
-    max-width: 100%;
     height: 265px;
     min-width: none;
+    max-width: none;
     max-height: none;
     border-radius: 20px;
     object-fit: cover;
+    background: #1e1e1e0c;    
 }
 
 .productCard__title {
@@ -70,11 +71,12 @@
     margin: 0px;
     font-weight: 600;
 }
+
 .productCard__addCart {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0px;    
+    margin: 0px;
     padding: 8px;
     border-radius: 14px;
     font-size: 24px;

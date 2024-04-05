@@ -1,3 +1,4 @@
+import { productDataAndImgs } from "./functions/productData"
 import { verifyUserLogin } from "./functions/userAuth"
 
 let viewProductSection = document.getElementById("viewProductSection")
@@ -46,9 +47,24 @@ window.addEventListener("load", () => {
         })
     }
     if (productId != null) {
-        homeSection.style.display = "none"
-        viewProductSection.style.display = "flex"
-        pageTitle.textContent = ""
+        productDataAndImgs(productId).then(res => {            
+            console.log(res);
+            let viewProductImage = document.getElementById("viewProductImage")            
+            let viewProductProxImg = document.getElementById("viewProductProxImg")
+            let viewProductLastImg = document.getElementById("viewProductLastImg")
+            if (res.data.photos == 1) {
+                viewProductProxImg.style.display = "none"
+                viewProductLastImg.style.display = "none"
+            }
+            viewProductImage.src = `${res.images[0]}`
+            document.getElementById("viewProductName").textContent = `${res.data.name}`
+            document.getElementById("viewProductPrice").textContent = `R$${res.data.price}`
+            document.getElementById("viewProductCategory").textContent = `${res.data.category}`
+            document.getElementById("viewProductExtra").textContent = `${res.data.stars > 3 ? `Avaliado em ${res.data.stars} estrelas`.toUpperCase() : document.getElementById("viewProductExtra").textContent}`
+            homeSection.style.display = "none"
+            viewProductSection.style.display = "flex"
+            pageTitle.textContent = ""
+        })
     }
 })
 
@@ -77,7 +93,7 @@ window.addEventListener("hashchange", () => {
                 }
             }
         })
-    } else {        
+    } else {
         disableAllPages()
         homeSection.style.display = "flex"
         pageTitle.textContent = "HOME"

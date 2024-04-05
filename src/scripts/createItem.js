@@ -4,6 +4,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase
 import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
 import { getFirestore, doc, getDoc, setDoc, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 import { getStorage, ref, uploadString, uploadBytes } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-storage.js";
+import { activeLoading1, desactiveLoading1 } from "./functions/loading1";
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const analytics = getAnalytics(app);
@@ -173,6 +174,8 @@ function nextStep() {
 
 
 async function createProduct() {
+    activeLoading1()
+    let loading = 0
     let haveAnuncy = false
     if (CreateAnuncyPreviewImage.src != `${window.location.origin}/`) {
         haveAnuncy = true
@@ -201,14 +204,50 @@ async function createProduct() {
     imagesSelecteds.forEach(file => {
         let storageRef = ref(storage, `products/${docRef.id}/images/image${i}`);
         uploadString(storageRef, file, 'data_url').then((snapshot) => {
-
+            loading = loading + 50
+            if (loading == 100) {
+                desactiveLoading1()
+                clearFields()
+            }
         });
         i++
     });
     if (haveAnuncy == true) {
         let storageRef = ref(storage, `products/${docRef.id}/anuncy/image`);
         uploadString(storageRef, CreateAnuncyPreviewImage.src, 'data_url').then((snapshot) => {
-
+            loading = loading + 50
+            if (loading == 100) {
+                desactiveLoading1()
+                clearFields()
+            }
         });
+    } else {
+        loading = loading + 50
+        if (loading == 100) {
+            desactiveLoading1()
+            clearFields()
+        }
     }
+}
+
+function clearFields() {
+    stepscompletes = []
+    CreateAnuncyPreviewImage.src = ""
+    createItemPreview1.src = ""
+    createItemPreview2.src = ""
+    createItemPreview3.src = ""
+    createItemName.value = ""
+    createItemPrice.value = ""
+    createItemContinue.classList.remove("active")
+    step = 1
+    createItemStep1.classList.add("active")
+    createItemStep2.classList.remove("active")
+    createItemLine1.classList.remove("active")
+    createItemLine2.classList.remove("active")
+    createItemStep3.classList.remove("active")
+    divCreateItemStep1.style.display = "flex"
+    divCreateItemStep2.style.display = "none"
+    divCreateItemStep3.style.display = "none"
+    createItemStepTitle.textContent = "ADICIONAR IMAGENS"
+    createItemContinue.textContent = "CONTINUAR"
 }

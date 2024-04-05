@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="src/styles/components/cardAnuncy.css">
   <link rel="stylesheet" href="src/styles/components/filterBtn.css">
   <link rel="stylesheet" href="src/styles/components/productCard.css">
+  <link rel="stylesheet" href="src/styles/components/loader1.css">
   <link rel="stylesheet" href="src/styles/pages/viewProduct.css">
   <link rel="stylesheet" href="src/styles/pages/home.css">
   <link rel="stylesheet" href="src/styles/pages/perfil.css">
@@ -28,6 +29,18 @@
 
 <body>
   <main id="main">
+    <section id="loadingSection1">
+      <div class="dot-spinner">
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+      </div>
+    </section>
     <header class="main__header">
       <div>
         <button class="header__btn" id="viewNotifysBtn"><ion-icon name="notifications-outline"></ion-icon></button>
@@ -46,24 +59,24 @@
     <section class="main__viewProduct" id="viewProductSection">
       <div class="viewProductSection__div">
         <div class="viewProductSection__imgContainer">
-          <img
+          <img id="viewProductImage"
             src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ9FkB52cVvcB174LJT0lcofep4lQjH5Z80_tbHhJRHHYC0snkkO4vv3Kw4HiAAQLSbI5s7XsvGR9KAZ4boD05uIHgamI9HM0c1pBq_-giR&usqp=CAE"
             alt="" class="viewProductSection__productImg">
-          <button type="button" class="viewProductSection__alterImgBtn alterImgBtn--1"><ion-icon
+          <button id="viewProductProxImg" type="button" class="viewProductSection__alterImgBtn alterImgBtn--1"><ion-icon
               name="chevron-back-outline"></ion-icon></button>
-          <button type="button" class="viewProductSection__alterImgBtn alterImgBtn--2"><ion-icon
+          <button id="viewProductLastImg" type="button" class="viewProductSection__alterImgBtn alterImgBtn--2"><ion-icon
               name="chevron-forward-outline"></ion-icon></button>
         </div>
         <div class="viewProductSection__dataContainer">
           <div class="dataContainer__div">
             <div class="dataContainer__div--2">
-              <p class="dataContainer__category">BLUSA/TOP</p>
-              <p class="dataContainer__extra">MAIS DE 10 VENDIDOS</p>
+              <p class="dataContainer__category" id="viewProductCategory">BLUSA/TOP</p>
+              <p class="dataContainer__extra" id="viewProductExtra">MAIS DE 10 VENDIDOS</p>
               <p class="dataContainer__extra--1">Entrega em até 3 dias úteis</p>
             </div>
-            <p class="dataContainer__price"><span>R$40</span>R$25</p>
+            <p class="dataContainer__price" id="viewProductPrice"><span>R$40</span>R$25</p>
           </div>
-          <p class="dataContainer__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
+          <p class="dataContainer__title" id="viewProductName">Blusa Colorida De Tricô Cropped Estilo Regata</p>
           <div class="dataContainer__div--3">
             <button type="button" class="dataContainer__buy">COMPRAR</button>
             <button type="button" class="dataContainer__addCart"><ion-icon name="cart-outline"></ion-icon></button>
