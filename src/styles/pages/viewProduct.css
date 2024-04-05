@@ -3,5 +3,171 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background: var(--white);    
+    background: var(--white);
+    margin-top: 40px;
+    font-family: "Poppins", sans-serif;
+}
+
+.viewProductSection__div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 0px 40px;
+    gap: 40px;
+    height: 425px;
+}
+
+.viewProductSection__imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 425px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 4px hsl(0deg 0% 0% / 25%);
+    ;
+}
+
+.viewProductSection__productImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.viewProductSection__alterImgBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    color: var(--black);
+    box-shadow: 0px 4px 4px hsl(0deg 0% 0% / 25%);
+    border-radius: 100%;
+    height: 28px;
+    width: 28px;
+    padding: 0px;
+    position: absolute;
+    border: none;
+    outline-width: 0px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.viewProductSection__alterImgBtn.alterImgBtn--1 {
+    left: 0;
+    bottom: 0;
+    margin: 0px 0px 15px 15px;
+}
+
+.viewProductSection__alterImgBtn.alterImgBtn--2 {
+    right: 0;
+    bottom: 0;
+    margin: 0px 15px 15px 0px;
+}
+
+.viewProductSection__dataContainer {
+    width: calc(100% - 320px - 40px);
+    max-width: 530px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dataContainer__div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.dataContainer__div--2 {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.dataContainer__price {
+    font-family: "Teko", sans-serif;
+    color: var(--green);
+    font-weight: 800;
+    font-size: 36px;
+    margin: 0px;
+}
+
+.dataContainer__price span {
+    font-family: "Teko", sans-serif;
+    font-size: 18px;
+    color: var(--red);
+    text-decoration: line-through;
+}
+
+.dataContainer__category {
+    margin: 0px;
+    color: var(--black);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.dataContainer__extra {
+    font-size: 16px;
+    color: var(--green);
+    font-weight: 600;
+    margin: 0px;
+}
+
+.dataContainer__extra--1 {
+    font-size: 16px;
+    color: var(--black);
+    font-weight: 600;
+    margin: 0px;
+}
+
+.dataContainer__title {
+    margin: 0px;
+    font-size: 28px;
+    color: var(--black);
+    font-weight: 600;
+    margin: 0px;
+}
+
+.dataContainer__div--3 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+.dataContainer__buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 80px);
+    color: var(--black);
+    background: var(--yellow);
+    padding: 10px 0px;
+    border-radius: 180px;
+    font-size: 24px;
+    border: 0px;
+    outline-width: 0px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.dataContainer__addCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 55px;
+    border-radius: 100%;
+    padding: 0px;
+    outline-width: 0px;
+    border: 0px;
+    font-size: 24px;
+    background: var(--input-white);
+    color: var(--black);
+    cursor: pointer;
 }

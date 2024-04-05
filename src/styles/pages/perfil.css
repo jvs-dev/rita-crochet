@@ -1,0 +1,152 @@
+.main__perfil {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.perfilSection__div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+    margin: 20px 0px;
+}
+
+.perfilSection__div__div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.perfilSection__div__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    font-size: 22px;
+    background: var(--input-white);
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    border: 0px;
+    outline-width: 0px;
+    color: var(--black);
+    box-shadow: 0px 2px 4px rgba(0%, 0%, 0%, 0.25);
+}
+
+.perfilSection__p {
+    font-size: 28px;
+    font-family: var(--teko);
+    font-weight: 500;
+    margin: 10px 0px 0px 0px;
+}
+
+.perfilSection__p.p2 {
+    margin: 25px 0px 0px 0px;
+}
+
+.perfilSection__photo {
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 4px rgba(0%, 0%, 0%, 0.25);
+}
+
+.perfilSection__userDataDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray);
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 2px;
+    margin-top: 20px;
+}
+
+.userDataDiv__article {
+    background: var(--white);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;    
+    padding: 10px 20px;
+}
+
+.userDataDiv__article:nth-child(1) {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.userDataDiv__article:nth-child(4) {
+    border-radius: 0px 0px 5px 5px;
+}
+
+.userDataDiv__p {
+    margin: 0px 0px 5px 0px;
+    font-size: var(--poppins);
+    font-weight: 600;
+}
+
+.userDataDiv__div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.userDataDiv__input {
+    font-size: var(--poppins);
+    border: 0px;
+    outline-width: 0px;
+    background: var(--input-white);
+    border-radius: 10px;
+    color: #444444;
+    font-size: 16px;
+    padding: 4px 14px;
+    min-width: 75%;
+}
+
+.userDataDiv__btn {
+    font-size: var(--poppins);
+    background: var(--black);
+    color: var(--white);
+    border-radius: 180px;
+    padding: 4px 25px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 0px;
+    outline-width: 0px;
+    cursor: pointer;
+}
+
+.userDataDiv__exit {
+    font-size: var(--poppins);
+    color: var(--red);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0px 0px 0px;
+}
+.userDataDiv__SignOut {
+    color: var(--white);
+    font-family: var(--poppins);
+    font-size: 14px;
+    background: red;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 2px 15px;
+    margin: 15px 0px 0px 0px;
+    border: 0px;
+    outline-width: 0px;
+    cursor: pointer;
+}

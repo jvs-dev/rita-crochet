@@ -20,25 +20,57 @@
   <link rel="stylesheet" href="src/styles/components/filterBtn.css">
   <link rel="stylesheet" href="src/styles/components/productCard.css">
   <link rel="stylesheet" href="src/styles/pages/viewProduct.css">
-  <link rel="stylesheet" href="src/styles/pages/home.css">  
+  <link rel="stylesheet" href="src/styles/pages/home.css">
+  <link rel="stylesheet" href="src/styles/pages/perfil.css">
+  <link rel="stylesheet" href="src/styles/pages/createItem.css">
   <link rel="stylesheet" href="src/styles/mobile.css">
 </head>
 
 <body>
   <main id="main">
     <header class="main__header">
-      <button class="header__btn"><ion-icon name="notifications-outline"></ion-icon></button>
+      <div>
+        <button class="header__btn" id="viewNotifysBtn"><ion-icon name="notifications-outline"></ion-icon></button>
+      </div>
       <div class="header__div">
         <h1 class="header__title">Rita crochet</h1>
-        <h2 class="header__subTitle">HOME</h2>
+        <h2 class="header__subTitle" id="pageTitle">HOME</h2>
       </div>
       <div class="header__div--2">
-        <button class="header__btn"><ion-icon name="cart-outline"></ion-icon></button>
-        <button class="header__btn"><ion-icon name="person-outline"></ion-icon></button>
+        <button class="header__btn" id="createProductBtn"><ion-icon name="add-circle-outline"></ion-icon></button>
+        <button class="header__btn" id="viewCartBtn"><ion-icon name="cart-outline"></ion-icon></button>
+        <button class="header__btn" id="viewPerfilBtn"><ion-icon name="person-outline"></ion-icon></button>
+        <button class="header__btn loginBtn" id="loginBtn" type="button">LOGIN</button>
       </div>
     </header>
     <section class="main__viewProduct" id="viewProductSection">
-      
+      <div class="viewProductSection__div">
+        <div class="viewProductSection__imgContainer">
+          <img
+            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ9FkB52cVvcB174LJT0lcofep4lQjH5Z80_tbHhJRHHYC0snkkO4vv3Kw4HiAAQLSbI5s7XsvGR9KAZ4boD05uIHgamI9HM0c1pBq_-giR&usqp=CAE"
+            alt="" class="viewProductSection__productImg">
+          <button type="button" class="viewProductSection__alterImgBtn alterImgBtn--1"><ion-icon
+              name="chevron-back-outline"></ion-icon></button>
+          <button type="button" class="viewProductSection__alterImgBtn alterImgBtn--2"><ion-icon
+              name="chevron-forward-outline"></ion-icon></button>
+        </div>
+        <div class="viewProductSection__dataContainer">
+          <div class="dataContainer__div">
+            <div class="dataContainer__div--2">
+              <p class="dataContainer__category">BLUSA/TOP</p>
+              <p class="dataContainer__extra">MAIS DE 10 VENDIDOS</p>
+              <p class="dataContainer__extra--1">Entrega em até 3 dias úteis</p>
+            </div>
+            <p class="dataContainer__price"><span>R$40</span>R$25</p>
+          </div>
+          <p class="dataContainer__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
+          <div class="dataContainer__div--3">
+            <button type="button" class="dataContainer__buy">COMPRAR</button>
+            <button type="button" class="dataContainer__addCart"><ion-icon name="cart-outline"></ion-icon></button>
+          </div>
+        </div>
+      </div>
+      <h2 class="viewProductSection__coments">Avaliações</h2>
     </section>
     <section class="main__home" id="homeSection">
       <div class="home__div">
@@ -49,54 +81,6 @@
         <button class="home__options"><ion-icon name="options-outline"></ion-icon></button>
       </div>
       <div class="home__carroussel" id="homeCarroussel">
-        <article class="carroussel__cardAnuncy">
-          <img
-            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRXRD86L2JUgN8qBCr4BG87itJL1mbjpM3KESjXzrK5o7VHKKZwnj013tmZZZ5fKD5LcMEIyFkqEifewkRDOXDjc_DZ6JztmSgAeezJP00&usqp=CAE"
-            alt="" class="cardAnuncy__img">
-          <div class="cardAnuncy__div">
-            <p class="cardAnuncy__title">CONJUNTO 3 PEÇAS TOP, VESTIDO E BOLSA BEGE STYLE PREMIUM</p>
-            <div class="cardAnuncy__div--2">
-              <p class="cardAnuncy__p">MAIS DE 30 COMPRAS</p>
-              <button class="cardAnuncy__viewMore">VER MAIS</button>
-            </div>
-          </div>
-        </article>
-        <article class="carroussel__cardAnuncy">
-          <img
-            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRXRD86L2JUgN8qBCr4BG87itJL1mbjpM3KESjXzrK5o7VHKKZwnj013tmZZZ5fKD5LcMEIyFkqEifewkRDOXDjc_DZ6JztmSgAeezJP00&usqp=CAE"
-            alt="" class="cardAnuncy__img">
-          <div class="cardAnuncy__div">
-            <p class="cardAnuncy__title">CONJUNTO 3 PEÇAS TOP, VESTIDO E BOLSA BEGE STYLE PREMIUM</p>
-            <div class="cardAnuncy__div--2">
-              <p class="cardAnuncy__p">MAIS DE 30 COMPRAS</p>
-              <button class="cardAnuncy__viewMore">VER MAIS</button>
-            </div>
-          </div>
-        </article>
-        <article class="carroussel__cardAnuncy">
-          <img
-            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRXRD86L2JUgN8qBCr4BG87itJL1mbjpM3KESjXzrK5o7VHKKZwnj013tmZZZ5fKD5LcMEIyFkqEifewkRDOXDjc_DZ6JztmSgAeezJP00&usqp=CAE"
-            alt="" class="cardAnuncy__img">
-          <div class="cardAnuncy__div">
-            <p class="cardAnuncy__title">CONJUNTO 3 PEÇAS TOP, VESTIDO E BOLSA BEGE STYLE PREMIUM</p>
-            <div class="cardAnuncy__div--2">
-              <p class="cardAnuncy__p">MAIS DE 30 COMPRAS</p>
-              <button class="cardAnuncy__viewMore">VER MAIS</button>
-            </div>
-          </div>
-        </article>
-        <article class="carroussel__cardAnuncy">
-          <img
-            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRXRD86L2JUgN8qBCr4BG87itJL1mbjpM3KESjXzrK5o7VHKKZwnj013tmZZZ5fKD5LcMEIyFkqEifewkRDOXDjc_DZ6JztmSgAeezJP00&usqp=CAE"
-            alt="" class="cardAnuncy__img">
-          <div class="cardAnuncy__div">
-            <p class="cardAnuncy__title">CONJUNTO 3 PEÇAS TOP, VESTIDO E BOLSA BEGE STYLE PREMIUM</p>
-            <div class="cardAnuncy__div--2">
-              <p class="cardAnuncy__p">MAIS DE 30 COMPRAS</p>
-              <button class="cardAnuncy__viewMore">VER MAIS</button>
-            </div>
-          </div>
-        </article>
         <article class="carroussel__cardAnuncy">
           <img
             src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRXRD86L2JUgN8qBCr4BG87itJL1mbjpM3KESjXzrK5o7VHKKZwnj013tmZZZ5fKD5LcMEIyFkqEifewkRDOXDjc_DZ6JztmSgAeezJP00&usqp=CAE"
@@ -174,7 +158,193 @@
                 class="productCard__addCartIcon"></ion-icon></button>
           </div>
         </article>
-        
+
+      </div>
+    </section>
+    <section class="main__perfil" id="perfilSection">
+      <div class="perfilSection__div">
+        <img class="perfilSection__photo" id="perfil_Photo" src="" alt="">
+        <div class="perfilSection__div__div">
+          <button class="perfilSection__div__btn" type="button"><i class="bi bi-box-seam"></i></button>
+          <button class="perfilSection__div__btn" type="button"><lord-icon class="perfilSection__div__lordIcon"
+              src="https://cdn.lordicon.com/zzjjvkam.json" trigger="hover" colors="primary:#1f1f1f,secondary:#1f1f1f">
+            </lord-icon></button>
+          <button type="button" class="perfilSection__div__btn"><ion-icon name="star-outline"></ion-icon></button>
+        </div>
+      </div>
+      <p class="perfilSection__p">MEUS DADOS</p>
+      <div class="perfilSection__userDataDiv">
+        <article class="userDataDiv__article">
+          <p class="userDataDiv__p">Nome Completo</p>
+          <div class="userDataDiv__div">
+            <input class="userDataDiv__input" type="text" placeholder="João Vitor Santana" disabled>
+            <button class="userDataDiv__btn" type="button">Alterar</button>
+          </div>
+        </article>
+        <article class="userDataDiv__article">
+          <p class="userDataDiv__p">Telefone</p>
+          <div class="userDataDiv__div">
+            <input class="userDataDiv__input" type="tel" disabled>
+            <button class="userDataDiv__btn" type="button">Alterar</button>
+          </div>
+        </article>
+        <article class="userDataDiv__article">
+          <p class="userDataDiv__p">Endereço</p>
+          <div class="userDataDiv__div">
+            <input class="userDataDiv__input" type="text" disabled>
+            <button class="userDataDiv__btn" type="button">Alterar</button>
+          </div>
+        </article>
+        <article class="userDataDiv__article">
+          <p class="userDataDiv__p">CPF</p>
+          <div class="userDataDiv__div">
+            <input class="userDataDiv__input" type="number" disabled>
+            <button class="userDataDiv__btn" type="button">Alterar</button>
+          </div>
+        </article>
+        <button class="userDataDiv__SignOut" id="exitAccount">Sair da conta</button>
+      </div>
+      <p class="perfilSection__p p2">RECOMENDADOS</p>
+      <div class="loadProductsDiv">
+        <article class="productCard">
+          <img class="productCard__img"
+            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
+            alt="">
+          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
+          <div class="productCard__div">
+            <div class="productCard__div--2">
+              <p class="productCard__category">BLUSA/TOP</p>
+              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
+            </div>
+            <button class="productCard__addCart"><ion-icon name="cart-outline"
+                class="productCard__addCartIcon"></ion-icon></button>
+          </div>
+        </article>
+        <article class="productCard">
+          <img class="productCard__img"
+            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
+            alt="">
+          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
+          <div class="productCard__div">
+            <div class="productCard__div--2">
+              <p class="productCard__category">BLUSA/TOP</p>
+              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
+            </div>
+            <button class="productCard__addCart"><ion-icon name="cart-outline"
+                class="productCard__addCartIcon"></ion-icon></button>
+          </div>
+        </article>
+        <article class="productCard">
+          <img class="productCard__img"
+            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
+            alt="">
+          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
+          <div class="productCard__div">
+            <div class="productCard__div--2">
+              <p class="productCard__category">BLUSA/TOP</p>
+              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
+            </div>
+            <button class="productCard__addCart"><ion-icon name="cart-outline"
+                class="productCard__addCartIcon"></ion-icon></button>
+          </div>
+        </article>
+        <article class="productCard">
+          <img class="productCard__img"
+            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
+            alt="">
+          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
+          <div class="productCard__div">
+            <div class="productCard__div--2">
+              <p class="productCard__category">BLUSA/TOP</p>
+              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
+            </div>
+            <button class="productCard__addCart"><ion-icon name="cart-outline"
+                class="productCard__addCartIcon"></ion-icon></button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+    <section class="main__createItem" id="createItemSection">
+      <div class="createItem__div--1">
+        <button class="createItem__stepBtn active" id="createItemStep1">1</button>
+        <div class="stepLine" id="createItemLine1"></div>
+        <button class="createItem__stepBtn" id="createItemStep2">2</button>
+        <div class="stepLine" id="createItemLine2"></div>
+        <button class="createItem__stepBtn" id="createItemStep3">3</button>
+      </div>
+      <div class="createItem__div--2">
+        <h1 class="createItem__stepTitle" id="createItemStepTitle">ADICIONAR IMAGENS</h1>
+
+        <div class="createItem__div--3" id="divCreateItemStep1">
+          <article class="createItem__imagesCard">
+            <p class="imagesCard__p--1">imagem principal</p>
+            <label for="createItemImage1" class="imagesCard__label">
+              <p class="imagesCard__p--2">Clique para adicionar</p>
+              <img src="" alt="" class="imagesCard__img" id="createItemPreview1">
+              <input type="file" class="imagesCard__inputFile" id="createItemImage1" name="createItemImage1"
+                accept="images/*">
+            </label>
+          </article>
+          <article class="createItem__imagesCard">
+            <p class="imagesCard__p--1">imagem 2 (Opcional)</p>
+            <label for="createItemImage2" class="imagesCard__label">
+              <p class="imagesCard__p--2">Clique para adicionar</p>
+              <img src="" alt="" class="imagesCard__img" id="createItemPreview2">
+              <input type="file" class="imagesCard__inputFile" id="createItemImage2" name="createItemImage2"
+                accept="images/*">
+            </label>
+          </article>
+          <article class="createItem__imagesCard">
+            <p class="imagesCard__p--1">imagem 3 (Opcional)</p>
+            <label for="createItemImage3" class="imagesCard__label">
+              <p class="imagesCard__p--2">Clique para adicionar</p>
+              <img src="" alt="" class="imagesCard__img" id="createItemPreview3">
+              <input type="file" class="imagesCard__inputFile" id="createItemImage3" name="createItemImage3"
+                accept="images/*">
+            </label>
+          </article>
+
+        </div>
+        <div class="createItem__div--3" id="divCreateItemStep2">
+          <input type="text" class="divCreateItemStep2__input" id="createItemName" placeholder="Nome">
+          <div class="divCreateItemStep2__div">
+            <div class="createItem__containerInput">
+              <ion-icon name="cash-outline"></ion-icon>
+              <input type="number" class="divCreateItemStep2__input--2" id="createItemPrice" placeholder="Preço">
+            </div>
+            <div class="createItem__containerInput">
+              <ion-icon name="pricetag-outline"></ion-icon>
+              <select name="createItemCategory" id="createItemCategory" class="divCreateItemStep2__select">
+                <option value="Cropped">Cropped</option>
+                <option value="Biquini">Biquini</option>
+                <option value="Top">Top</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="createItem__div--3" id="divCreateItemStep3">
+
+          <label for="CreateAnuncyFile" class="CreateAnuncyLabel">
+            <p class="CreateAnuncyLabel__p">Clique para adicionar imagem de anúncio</p>
+            <article class="carroussel__cardAnuncy">
+              <img src="" alt="" class="cardAnuncy__img" id="CreateAnuncyPreviewImage">
+              <input type="file" id="CreateAnuncyFile">
+              <div class="cardAnuncy__div">
+                <p class="cardAnuncy__title" id="CreateAnuncyPreviewText"></p>
+                <div class="cardAnuncy__div--2">
+                  <p class="cardAnuncy__p">MAIS DE 10 COMPRAS</p>
+                  <button class="cardAnuncy__viewMore">VER MAIS</button>
+                </div>
+              </div>
+            </article>
+          </label>
+
+        </div>
+        <div class="createItem__div--4">
+          <button class="createItem__cancelContinueStepBtn cancel">CANCELAR</button>
+          <button class="createItem__cancelContinueStepBtn continue" id="createItemContinue">CONTINUAR</button>
+        </div>
       </div>
     </section>
     <nav class="main__mobileNav">
@@ -193,10 +363,14 @@
     </nav>
   </main>
 
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script type="module" src="src/scripts/components/alterPage.js"></script>
+  <script type="module" src="src/scripts/alterPage.js"></script>
   <script type="module" src="src/scripts/components/carroussel.js"></script>
+  <script type="module" src="src/scripts/loadData.js"></script>
+  <script type="module" src="src/scripts/createItem.js"></script>
+  <script type="module" src="src/scripts/components/loadProductsDiv.js"></script>
 </body>
 
 </html>

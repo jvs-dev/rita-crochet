@@ -4,6 +4,11 @@
     --yellow: #F2E38E;
     --dark-yellow: #FFE344;
     --input-white: #EEEEEE;
+    --gray: #D9D9D9;
+    --green: #00FF75;
+    --red: #FF0000;
+    --poppins: "Poppins", sans-serif;
+    --teko: "Teko", sans-serif;
 }
 
 body {

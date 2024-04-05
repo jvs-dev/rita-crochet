@@ -33,7 +33,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 500;
-    margin: 0px;
+    margin: 0px 0px 4px 0px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -53,7 +53,7 @@
 }
 .cardAnuncy__viewMore {
     margin: 0px;
-    padding: 6px 25px;
+    padding: 4px 25px;
     color: var(--black);
     background: var(--dark-yellow);
     border-radius: 100px;
