@@ -1,0 +1,95 @@
+.cardComent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cardComent__comentText {
+    width: auto;
+    max-width: 100%;
+    background: var(--input-white);
+    font-family: var(--poppins);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 145%;
+    color: var(--black);
+    border-radius: 0px 20px 20px 20px;
+    padding: 14px 20px;
+    margin: 10px 0px 0px 70px;
+}
+
+.cardComent__div--1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.cardComent__photo {
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.cardComent__name {
+    margin: 0px;
+    font-family: var(--poppins);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.cardComent__data {
+    margin: 0px;
+    font-family: var(--poppins);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cardComent__div--2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cardComent__div--3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.cardComent__div--4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px;
+    gap: 2px;
+}
+
+.cardComent__star {
+    color: var(--gray);
+    font-size: 20px;
+    margin: 0px 0px 2px 0px;
+}
+
+.cardComent__star.active {
+    color: #FFBF44;
+}
+
+.cardComent__div--5 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 10px 0px 0px 70px;
+}
+
+.cardComent__comentImg {
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0px 2px 2px 0px rgba(00, 00, 00, 0.25);
+    border-radius: 10px;
+    cursor: pointer;
+}

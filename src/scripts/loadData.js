@@ -1,3 +1,4 @@
+import { loadCart } from "./components/cart";
 import { createUser, getUserDoc } from "./functions/UserData";
 import { signIn, signOutUser, verifyUserLogin } from "./functions/userAuth";
 let viewNotifysBtn = document.getElementById("viewNotifysBtn")
@@ -32,6 +33,7 @@ function initLoad() {
                 })
             }
         } else {
+            loadCart()
             getUserDoc(result.email).then(resData => {
                 if (resData.admin == true) {
                     let createProductBtn = document.getElementById("createProductBtn")

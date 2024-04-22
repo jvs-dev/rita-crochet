@@ -1,3 +1,4 @@
+import { addToCart } from "./components/cart"
 import { productDataAndImgs } from "./functions/productData"
 import { verifyUserLogin } from "./functions/userAuth"
 
@@ -47,20 +48,54 @@ window.addEventListener("load", () => {
         })
     }
     if (productId != null) {
-        productDataAndImgs(productId).then(res => {            
-            console.log(res);
-            let viewProductImage = document.getElementById("viewProductImage")            
+        productDataAndImgs(productId).then(res => {
+            let mainHeader = document.getElementById("mainHeader")
+            let imageNow = 0
+            let viewProductAddCart = document.getElementById("viewProductAddCart")
+            let viewProductImage = document.getElementById("viewProductImage")
             let viewProductProxImg = document.getElementById("viewProductProxImg")
             let viewProductLastImg = document.getElementById("viewProductLastImg")
+            mainHeader.style.display = "none"
+            viewProductImage.src = `${res.images[imageNow]}`
             if (res.data.photos == 1) {
                 viewProductProxImg.style.display = "none"
                 viewProductLastImg.style.display = "none"
+            } else {
+                viewProductProxImg.onclick = function () {
+                    if (imageNow == (res.data.photos - 1)) {
+                        imageNow = 0
+                        viewProductImage.src = `${res.images[imageNow]}`
+                    } else {
+                        imageNow = imageNow + 1
+                        viewProductImage.src = `${res.images[imageNow]}`
+                    }
+                }
+                viewProductLastImg.onclick = function () {
+                    if (imageNow == 0) {
+                        imageNow = res.data.photos - 1
+                        viewProductImage.src = `${res.images[imageNow]}`
+                    } else {
+                        imageNow = imageNow - 1
+                        viewProductImage.src = `${res.images[imageNow]}`
+                    }
+                }
             }
-            viewProductImage.src = `${res.images[0]}`
             document.getElementById("viewProductName").textContent = `${res.data.name}`
             document.getElementById("viewProductPrice").textContent = `R$${res.data.price}`
             document.getElementById("viewProductCategory").textContent = `${res.data.category}`
             document.getElementById("viewProductExtra").textContent = `${res.data.stars > 3 ? `Avaliado em ${res.data.stars} estrelas`.toUpperCase() : document.getElementById("viewProductExtra").textContent}`
+            viewProductAddCart.onclick = function () {
+                viewProductAddCart.style.background = "var(--green)"
+                viewProductAddCart.style.color = "var(--white)"
+                viewProductAddCart.innerHTML = `<ion-icon name="checkmark-outline"></ion-icon>`
+                addToCart(productId, 1).then(added => {
+                    setTimeout(() => {
+                        viewProductAddCart.style.background = ""
+                        viewProductAddCart.style.color = ""
+                        viewProductAddCart.innerHTML = `<ion-icon name="cart-outline"></ion-icon>`
+                    }, 1000);
+                })
+            }
             homeSection.style.display = "none"
             viewProductSection.style.display = "flex"
             pageTitle.textContent = ""

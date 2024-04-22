@@ -1,0 +1,103 @@
+.main__viewCart {
+    max-width: 80vw;
+    width: 450px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px 20px 0px;
+    background: var(--white);
+    border-radius: 20px 0px 0px 0px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    box-shadow: -1px 2px 4px 2px rgba(68, 68, 68, 0.25);
+    transform: translate(100vw);
+    transition: 0.5s;
+}
+
+.main__viewCart.active {
+    transform: translate(0vw);
+}
+
+.viewCart__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px 20px 0px 0px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    border: 0px;
+    outline-width: 0px;
+    cursor: pointer;
+    font-size: 32px;
+    padding: 0px;
+}
+
+.viewCart__h2 {
+    font-family: var(--teko);
+    color: var(--black);
+    font-size: 38px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.viewCart__div--1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+}
+
+.viewCart__div--1::-webkit-scrollbar {
+    width: 4px;
+}
+
+.viewCart__div--1::-webkit-scrollbar-thumb {
+    background: #FFE344;
+    border-radius: 0px;
+}
+
+.viewCart__div--2 {
+    margin-top: 10px;
+}
+
+.viewCart__finalizeBuy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    background: #FFE344;
+    border-radius: 12px;
+    padding: 10px 35px;
+    border: 0px;
+    outline-width: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--poppins);
+    cursor: pointer;
+}
+
+.viewCart__price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--poppins);
+    margin: 0px;
+}
+
+.viewCart__priceSpan {
+    color: #12e474;
+    margin-left: 5px;
+}

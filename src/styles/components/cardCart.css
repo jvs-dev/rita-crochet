@@ -1,0 +1,282 @@
+.cardCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--gray);
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.cardCart__div--1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.cardCart__img {
+    object-fit: cover;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.cardCart__note {
+    margin: 0px;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: var(--poppins);
+    line-height: 120%;
+}
+
+.cardCart__name {
+    margin: 0px;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: var(--poppins);
+    overflow: hidden;
+    width: 280px;
+    line-height: 120%;
+    max-height: 23px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cardCart__price {
+    margin: 0px;
+    color: var(--green);
+    font-weight: 600;
+    font-size: 18px;
+    font-family: var(--poppins);
+    line-height: 120%;
+}
+
+.cardCart__div--2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cardCart__div--4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 5px;
+    width: 100%;
+    position: relative;
+}
+
+.cardCart__quanty {
+    margin: 0px;
+    color: #000;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: var(--poppins);
+}
+
+.cardCart__quantyInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    padding: 2px 0px 0px 0px;
+    border-radius: 8px;
+    border: solid 1px var(--black);
+    outline-width: 0px;
+    font-family: var(--poppins);
+    font-weight: 600;
+    text-align: center;
+}
+
+.cardCart__checkbox {
+    width: 25px;
+    min-width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    border: solid 1px var(--black);
+    background: var(--white);
+    cursor: pointer;
+}
+
+.cardCart__div--3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cardCart__starsDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.cardCart__star {
+    color: var(--gray);
+    font-size: 20px;
+    margin: 0px 0px 2px 0px;
+}
+
+.cardCart__star.active {
+    color: #FFBF44;
+}
+
+.cl-checkbox {
+    position: relative;
+    display: inline-block;
+}
+
+/* Input */
+.cl-checkbox>input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    z-index: -1;
+    position: absolute;
+    left: -10px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: none;
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+/* Span */
+.cl-checkbox>span {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Box */
+.cl-checkbox>span::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 2px 0px 3px 0px;
+    border: solid 2px;
+    /* Safari */
+    border-color: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Checkmark */
+.cl-checkbox>span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 1px;
+    width: 10px;
+    height: 5px;
+    border: solid 2px transparent;
+    border-right: none;
+    border-top: none;
+    transform: translate(3px, 4px) rotate(-45deg);
+}
+
+/* Checked, Indeterminate */
+.cl-checkbox>input:checked,
+.cl-checkbox>input:indeterminate {
+    background-color: #018786;
+}
+
+.cl-checkbox>input:checked+span::before,
+.cl-checkbox>input:indeterminate+span::before {
+    border-color: #018786;
+    background-color: #018786;
+}
+
+.cl-checkbox>input:checked+span::after,
+.cl-checkbox>input:indeterminate+span::after {
+    border-color: #fff;
+}
+
+.cl-checkbox>input:indeterminate+span::after {
+    border-left: none;
+    transform: translate(4px, 3px);
+}
+
+/* Hover, Focus */
+.cl-checkbox:hover>input {
+    opacity: 0.04;
+}
+
+.cl-checkbox>input:focus {
+    opacity: 0.12;
+}
+
+.cl-checkbox:hover>input:focus {
+    opacity: 0.16;
+}
+
+/* Active */
+.cl-checkbox>input:active {
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0s, opacity 0s;
+}
+
+.cl-checkbox>input:active+span::before {
+    border-color: #85b8b7;
+}
+
+.cl-checkbox>input:checked:active+span::before {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Disabled */
+.cl-checkbox>input:disabled {
+    opacity: 0;
+}
+
+.cl-checkbox>input:disabled+span {
+    color: rgba(0, 0, 0, 0.38);
+    cursor: initial;
+}
+
+.cl-checkbox>input:disabled+span::before {
+    border-color: currentColor;
+}
+
+.cl-checkbox>input:checked:disabled+span::before,
+.cl-checkbox>input:indeterminate:disabled+span::before {
+    border-color: transparent;
+    background-color: currentColor;
+}
+
+.cardCart__delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-size: 20px;
+    padding: 0px;
+    outline-width: 0px;
+    border: 0px;
+    cursor: pointer;
+    background: transparent;
+}

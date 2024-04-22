@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: flex-start;
     margin: 0px 15px;
-    max-width: 200px;
+    width: 200px;
     cursor: pointer;
 }
 
@@ -41,7 +41,7 @@
     max-height: none;
     border-radius: 20px;
     object-fit: cover;
-    background: #1e1e1e0c;    
+    background: #1e1e1e0c;
 }
 
 .productCard__title {
@@ -85,4 +85,9 @@
     color: var(--black);
     border: 0px;
     outline-width: 0px;
+    transition: 0.2s;
+}
+
+.productCard__addCartIcon {
+    transition: 0s;
 }

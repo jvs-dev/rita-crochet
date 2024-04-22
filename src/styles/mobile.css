@@ -9,6 +9,7 @@
 
     .main__header {
         justify-content: center;
+        padding-bottom: 10px;
     }
 
     .filterBtn {
@@ -54,5 +55,91 @@
         font-size: 18px;
         padding: 6px;
         border-radius: 10px;
+    }
+    .cardComent__comentText {
+        margin-left: 0px;
+    }
+    .cardComent__div--5 {        
+        margin: 10px 0px 0px 0px;
+    }    
+    .header__div--2 {
+        display: none;
+    }
+    .header__div--notify {
+        display: none;
+    }
+    .home__div {
+        padding: 0px 20px;
+    }
+    .home__options  {
+        min-width: 45px;
+    }
+    .home__filters {
+        padding-bottom: 0px;
+    }
+    .home__filters::-webkit-scrollbar {
+        height: 0px;        
+    }
+    
+    .home__filters::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 0px;
+    }
+    .viewProductSection__div {
+        flex-direction: column;
+    }
+    .main__viewProduct {
+        margin-top: 0px;        
+    }
+    .viewProductSection__div {
+        padding: 0px;
+        height: auto;
+        gap: 10px;
+    }    
+    .viewProductSection__imgContainer {
+        width: 100vw;
+        height: 60vh;        
+        border-radius: 0px 0px 40px 40px;    
+        box-shadow: none;
+    }
+    .viewProductSection__dataContainer {
+        width: 100%;
+        align-items: center;
+    }
+    .dataContainer__div {
+        align-items: center;
+        padding: 0px 10px;
+        width: 100%;
+    }
+    .dataContainer__category {
+        font-size: 22px;
+    }
+    .dataContainer__price {        
+        color: #32ee96;        
+        font-size: 31px;        
+    }
+    .dataContainer__title {
+        padding: 0px 10px;
+        margin: 30px 0px 30px 0px;
+        font-size: 22px;        
+        font-weight: 700;        
+    }
+    .dataContainer__div--3 {
+        width: calc(100% - 20px);        
+    }
+    .dataContainer__buy {
+        font-size: 19px;
+        padding: 8px 0px;
+    }
+    .main__viewCart {
+        width: 100vw;
+        max-width: none;
+        border-radius: 0px;
+    }
+    .viewCart__div--1::-webkit-scrollbar {
+        width: 6px;
+    }
+    .cardCart__name {
+        width: 55vw;
     }
 }

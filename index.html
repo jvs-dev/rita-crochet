@@ -19,7 +19,10 @@
   <link rel="stylesheet" href="src/styles/components/cardAnuncy.css">
   <link rel="stylesheet" href="src/styles/components/filterBtn.css">
   <link rel="stylesheet" href="src/styles/components/productCard.css">
+  <link rel="stylesheet" href="src/styles/components/cardComent.css">
+  <link rel="stylesheet" href="src/styles/components/cardCart.css">
   <link rel="stylesheet" href="src/styles/components/loader1.css">
+  <link rel="stylesheet" href="src/styles/components/cart.css">
   <link rel="stylesheet" href="src/styles/pages/viewProduct.css">
   <link rel="stylesheet" href="src/styles/pages/home.css">
   <link rel="stylesheet" href="src/styles/pages/perfil.css">
@@ -41,8 +44,8 @@
         <div class="dot-spinner__dot"></div>
       </div>
     </section>
-    <header class="main__header">
-      <div>
+    <header class="main__header" id="mainHeader">
+      <div class="header__div--notify">
         <button class="header__btn" id="viewNotifysBtn"><ion-icon name="notifications-outline"></ion-icon></button>
       </div>
       <div class="header__div">
@@ -56,6 +59,17 @@
         <button class="header__btn loginBtn" id="loginBtn" type="button">LOGIN</button>
       </div>
     </header>
+    <section class="main__viewCart" id="viewCart">
+      <button class="viewCart__close" id="closeCart"><ion-icon name="close-outline"></ion-icon></button>
+      <h2 class="viewCart__h2">CARRINHO</h2>
+      <div class="viewCart__div--1" id="loadCartItemsDiv">
+
+      </div>
+      <div class="viewCart__div--2">
+        <p class="viewCart__price">TOTAL:<span class="viewCart__priceSpan" id="cartTotalPriceSpan">R$0</span></p>
+        <button class="viewCart__finalizeBuy">FINALIZAR COMPRA</button>
+      </div>
+    </section>
     <section class="main__viewProduct" id="viewProductSection">
       <div class="viewProductSection__div">
         <div class="viewProductSection__imgContainer">
@@ -79,11 +93,99 @@
           <p class="dataContainer__title" id="viewProductName">Blusa Colorida De Tricô Cropped Estilo Regata</p>
           <div class="dataContainer__div--3">
             <button type="button" class="dataContainer__buy">COMPRAR</button>
-            <button type="button" class="dataContainer__addCart"><ion-icon name="cart-outline"></ion-icon></button>
+            <button type="button" class="dataContainer__addCart" id="viewProductAddCart"><ion-icon name="cart-outline"></ion-icon></button>
           </div>
         </div>
       </div>
       <h2 class="viewProductSection__coments">Avaliações</h2>
+      <div id="viewProductComentsDiv" class="viewProductSection__comentsDiv">
+        <article class="cardComent">
+          <div class="cardComent__div--1">
+            <img class="cardComent__photo"
+              src="data:image/jpeg;base64,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"
+              alt="">
+            <div class="cardComent__div--2">
+              <p class="cardComent__name">Matheus Henrique</p>
+              <div class="cardComent__div--3">
+                <p class="cardComent__data">12/04/24</p>
+                <div class="cardComent__div--4">
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star"></ion-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cardComent__comentText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in
+            quaerat quidem dolor ipsum ea autem vel iure amet blanditiis? Consequuntur iusto est et impedit optio aut
+            labore quidem placeat.</p>
+          <div class="cardComent__div--5">
+            <img class="cardComent__comentImg"
+              src="data:image/jpeg;base64,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"
+              alt="">
+            <img class="cardComent__comentImg"
+              src="data:image/jpeg;base64,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"
+              alt="">
+            <img class="cardComent__comentImg"
+              src="data:image/jpeg;base64,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"
+              alt="">
+          </div>
+        </article>
+
+        <article class="cardComent">
+          <div class="cardComent__div--1">
+            <img class="cardComent__photo"
+              src="data:image/jpeg;base64,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"
+              alt="">
+            <div class="cardComent__div--2">
+              <p class="cardComent__name">Matheus Henrique</p>
+              <div class="cardComent__div--3">
+                <p class="cardComent__data">12/04/24</p>
+                <div class="cardComent__div--4">
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star"></ion-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cardComent__comentText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in
+            quaerat quidem dolor ipsum ea autem vel iure amet blanditiis? Consequuntur iusto est et impedit optio aut
+            labore quidem placeat.</p>
+        </article>
+
+        <article class="cardComent">
+          <div class="cardComent__div--1">
+            <img class="cardComent__photo"
+              src="data:image/jpeg;base64,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"
+              alt="">
+            <div class="cardComent__div--2">
+              <p class="cardComent__name">Matheus Henrique</p>
+              <div class="cardComent__div--3">
+                <p class="cardComent__data">12/04/24</p>
+                <div class="cardComent__div--4">
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star active"></ion-icon>
+                  <ion-icon name="star" class="cardComent__star"></ion-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cardComent__comentText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in
+            quaerat quidem dolor ipsum ea autem vel iure amet blanditiis? Consequuntur iusto est et impedit optio aut
+            labore quidem placeat.</p>
+        </article>
+      </div>
+      <h2 class="viewProductSection__coments">Recomendados</h2>
+      <div class="loadProductsDiv">
+
+      </div>
     </section>
     <section class="main__home" id="homeSection">
       <div class="home__div">
@@ -94,18 +196,7 @@
         <button class="home__options"><ion-icon name="options-outline"></ion-icon></button>
       </div>
       <div class="home__carroussel" id="homeCarroussel">
-        <article class="carroussel__cardAnuncy">
-          <img
-            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRXRD86L2JUgN8qBCr4BG87itJL1mbjpM3KESjXzrK5o7VHKKZwnj013tmZZZ5fKD5LcMEIyFkqEifewkRDOXDjc_DZ6JztmSgAeezJP00&usqp=CAE"
-            alt="" class="cardAnuncy__img">
-          <div class="cardAnuncy__div">
-            <p class="cardAnuncy__title">CONJUNTO 3 PEÇAS TOP, VESTIDO E BOLSA BEGE STYLE PREMIUM</p>
-            <div class="cardAnuncy__div--2">
-              <p class="cardAnuncy__p">MAIS DE 30 COMPRAS</p>
-              <button class="cardAnuncy__viewMore">VER MAIS</button>
-            </div>
-          </div>
-        </article>
+        
       </div>
       <div class="home__filters">
         <button class="filterBtn">TOP</button>
@@ -115,62 +206,6 @@
         <button class="filterBtn">PARA BEBÊS</button>
       </div>
       <div class="loadProductsDiv">
-        <article class="productCard">
-          <img class="productCard__img"
-            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
-            alt="">
-          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
-          <div class="productCard__div">
-            <div class="productCard__div--2">
-              <p class="productCard__category">BLUSA/TOP</p>
-              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
-            </div>
-            <button class="productCard__addCart"><ion-icon name="cart-outline"
-                class="productCard__addCartIcon"></ion-icon></button>
-          </div>
-        </article>
-        <article class="productCard">
-          <img class="productCard__img"
-            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
-            alt="">
-          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
-          <div class="productCard__div">
-            <div class="productCard__div--2">
-              <p class="productCard__category">BLUSA/TOP</p>
-              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
-            </div>
-            <button class="productCard__addCart"><ion-icon name="cart-outline"
-                class="productCard__addCartIcon"></ion-icon></button>
-          </div>
-        </article>
-        <article class="productCard">
-          <img class="productCard__img"
-            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
-            alt="">
-          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
-          <div class="productCard__div">
-            <div class="productCard__div--2">
-              <p class="productCard__category">BLUSA/TOP</p>
-              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
-            </div>
-            <button class="productCard__addCart"><ion-icon name="cart-outline"
-                class="productCard__addCartIcon"></ion-icon></button>
-          </div>
-        </article>
-        <article class="productCard">
-          <img class="productCard__img"
-            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
-            alt="">
-          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
-          <div class="productCard__div">
-            <div class="productCard__div--2">
-              <p class="productCard__category">BLUSA/TOP</p>
-              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
-            </div>
-            <button class="productCard__addCart"><ion-icon name="cart-outline"
-                class="productCard__addCartIcon"></ion-icon></button>
-          </div>
-        </article>
 
       </div>
     </section>
@@ -219,62 +254,6 @@
       </div>
       <p class="perfilSection__p p2">RECOMENDADOS</p>
       <div class="loadProductsDiv">
-        <article class="productCard">
-          <img class="productCard__img"
-            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
-            alt="">
-          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
-          <div class="productCard__div">
-            <div class="productCard__div--2">
-              <p class="productCard__category">BLUSA/TOP</p>
-              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
-            </div>
-            <button class="productCard__addCart"><ion-icon name="cart-outline"
-                class="productCard__addCartIcon"></ion-icon></button>
-          </div>
-        </article>
-        <article class="productCard">
-          <img class="productCard__img"
-            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
-            alt="">
-          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
-          <div class="productCard__div">
-            <div class="productCard__div--2">
-              <p class="productCard__category">BLUSA/TOP</p>
-              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
-            </div>
-            <button class="productCard__addCart"><ion-icon name="cart-outline"
-                class="productCard__addCartIcon"></ion-icon></button>
-          </div>
-        </article>
-        <article class="productCard">
-          <img class="productCard__img"
-            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
-            alt="">
-          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
-          <div class="productCard__div">
-            <div class="productCard__div--2">
-              <p class="productCard__category">BLUSA/TOP</p>
-              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
-            </div>
-            <button class="productCard__addCart"><ion-icon name="cart-outline"
-                class="productCard__addCartIcon"></ion-icon></button>
-          </div>
-        </article>
-        <article class="productCard">
-          <img class="productCard__img"
-            src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tRDbOjYR2a3aL10vd22ANAhdbheXD_HNlDMPU00wQrlD7MsigAsreejyDvzTfqdakKvVTbgUgLytvUHLC-bHQQsYnPPQ9y_3jqhpRiQ&usqp=CAE"
-            alt="">
-          <p class="productCard__title">Blusa Colorida De Tricô Cropped Estilo Regata</p>
-          <div class="productCard__div">
-            <div class="productCard__div--2">
-              <p class="productCard__category">BLUSA/TOP</p>
-              <p class="productCard__p">MAIS DE 10 VENDIDOS</p>
-            </div>
-            <button class="productCard__addCart"><ion-icon name="cart-outline"
-                class="productCard__addCartIcon"></ion-icon></button>
-          </div>
-        </article>
 
       </div>
     </section>
@@ -364,7 +343,7 @@
       <button class="mobileNav__btn">
         <div class="mobileNav__icon active"><i class="bi bi-house"></i></div>HOME
       </button>
-      <button class="mobileNav__btn">
+      <button class="mobileNav__btn" id="mobileViewCart">
         <div class="mobileNav__icon"><ion-icon name="cart-outline"></ion-icon></div>CARRINHO
       </button>
       <button class="mobileNav__btn">
@@ -381,9 +360,10 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script type="module" src="src/scripts/alterPage.js"></script>
   <script type="module" src="src/scripts/components/carroussel.js"></script>
-  <script type="module" src="src/scripts/loadData.js"></script>
-  <script type="module" src="src/scripts/createItem.js"></script>
   <script type="module" src="src/scripts/components/loadProductsDiv.js"></script>
+  <script type="module" src="src/scripts/components/cart.js"></script>
+  <script type="module" src="src/scripts/loadData.js"></script>
+  <script type="module" src="src/scripts/createItem.js"></script>  
 </body>
 
 </html>

@@ -60,6 +60,9 @@ async function loadAnuncy() {
                         <button class="cardAnuncy__viewMore">VER MAIS</button>
                     </div>
                 </div>`
+                article.onclick = function () {
+                    window.location.href = `${window.location.origin}?productId=${doc.id}`
+                }
             })
     });
 }

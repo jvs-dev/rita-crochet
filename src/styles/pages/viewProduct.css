@@ -170,4 +170,16 @@
     background: var(--input-white);
     color: var(--black);
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.viewProductSection__comentsDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-top: solid 2px var(--input-white);
+    border-bottom: solid 2px var(--input-white);
+    padding: 20px;
+    gap: 30px;
 }
