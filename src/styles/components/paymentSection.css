@@ -1,0 +1,92 @@
+.main__paymentSection {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #0000009c;
+    backdrop-filter: blur(2px);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 22;
+    left: 0;
+    top: 0;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.paymentSection__div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    width: calc(100% - 40px);
+    max-width: 650px;
+}
+
+.paymentSection__h1 {
+    color: var(--black);
+    font-family: var(--poppins);
+    margin: 0px;
+    font-size: 28px;
+    font-weight: 700;
+}
+.paymentSection__h2 {
+    color: var(--black);
+    font-family: var(--poppins);
+    margin: 0px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.paymentSection__copyIcon {
+    font-size: 19px;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.paymentSection__qrcode {
+    object-fit: cover;
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    margin: 25px 0px 25px 0px;
+}
+
+.paymentSection__copyCode {
+    background: var(--input-white);
+    width: calc(100% - 40px);
+    max-width: 500px;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-radius: 8px;
+    gap: 10px;
+    margin: 0px 0px 25px 0px;
+}
+
+.paymentSection__copyText {
+    font-family: var(--poppins);
+    margin: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.9;
+    width: 100%;
+}
+
+.paymentSection__confirmBtn {
+    padding: 6px 0px;
+    width: calc(100% - 40px);
+    max-width: 400px;
+    border-radius: 15px;
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white);
+    border: 0px;
+    background: var(--green);
+    cursor: pointer;
+}

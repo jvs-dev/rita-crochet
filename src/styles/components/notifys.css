@@ -1,0 +1,78 @@
+.main__viewNotifys {
+    max-width: 80vw;
+    width: 450px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px 20px 0px;
+    background: var(--white);
+    border-radius: 0px 20px 0px 0px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    box-shadow: -1px 2px 4px 2px rgba(68, 68, 68, 0.25);
+    transform: translate(-100vw);
+    gap: 20px;
+    transition: 0.5s;
+}
+
+.main__viewNotifys.active {
+    transform: translate(0vw);
+}
+
+.viewNotifys__h2 {
+    font-family: var(--teko);
+    color: var(--black);
+    font-size: 38px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.viewNotifys__div--1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.viewNotifys__div--1::-webkit-scrollbar {
+    width: 4px;
+}
+
+.viewNotifys__div--1::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 0px;
+}
+
+.loadNotifysDiv__noMoreNotifys {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: var(--poppins);
+    text-transform: uppercase;
+    color: var(--black);
+    opacity: 0.6;
+    margin: 20px 0px;
+}
+
+.viewNotifys__closeBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px 20px 0px 0px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    border: 0px;
+    outline-width: 0px;
+    cursor: pointer;
+    font-size: 32px;
+    padding: 0px;
+}

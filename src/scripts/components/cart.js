@@ -6,6 +6,7 @@ import { getFirestore, doc, getDoc, getDocs, setDoc, collection, addDoc, updateD
 import { verifyUserLogin } from "../functions/userAuth";
 import { productDataAndImgs } from "../functions/productData";
 import { calcTotal } from "../functions/calcCartValue";
+import { buyThisProducts } from "../functions/buyProducts";
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const analytics = getAnalytics(app);
@@ -19,6 +20,7 @@ let viewCartBtn = document.getElementById("viewCartBtn")
 let viewCart = document.getElementById("viewCart")
 let loadCartItemsDiv = document.getElementById("loadCartItemsDiv")
 let cartTotalPriceSpan = document.getElementById("cartTotalPriceSpan")
+let cartFinalizeBuy = document.getElementById("cartFinalizeBuy")
 let selectedsArr = []
 
 mobileViewCart.onclick = function () {
@@ -196,6 +198,9 @@ export function loadCart() {
                                 cartTotalPriceSpan.textContent = `R$${calcTotal(selectedsArr)}`
                             }
                         }
+                    }
+                    cartFinalizeBuy.onclick = function () {
+                        buyThisProducts(selectedsArr)
                     }
                 })
             });

@@ -23,11 +23,14 @@
   <link rel="stylesheet" href="src/styles/components/cardCart.css">
   <link rel="stylesheet" href="src/styles/components/loader1.css">
   <link rel="stylesheet" href="src/styles/components/cart.css">
+  <link rel="stylesheet" href="src/styles/components/paymentSection.css">
+  <link rel="stylesheet" href="src/styles/components/notifys.css">
+  <link rel="stylesheet" href="src/styles/components/notifyCard.css">
   <link rel="stylesheet" href="src/styles/pages/viewProduct.css">
   <link rel="stylesheet" href="src/styles/pages/home.css">
   <link rel="stylesheet" href="src/styles/pages/perfil.css">
   <link rel="stylesheet" href="src/styles/pages/createItem.css">
-  <link rel="stylesheet" href="src/styles/mobile.css">
+  <link rel="stylesheet" href="src/styles/mobile.css">  
 </head>
 
 <body>
@@ -59,6 +62,45 @@
         <button class="header__btn loginBtn" id="loginBtn" type="button">LOGIN</button>
       </div>
     </header>
+    <section class="main__paymentSection" id="paymentSection">
+      <div class="paymentSection__div">
+        <h1 class="paymentSection__h1">Agora é com você!</h1>
+        <h2 class="paymentSection__h2">Pague com o pix</h2>
+        <img src="" alt="" class="paymentSection__qrcode" id="paymentQRCode">
+        <div class="paymentSection__copyCode">
+          <ion-icon name="copy-outline" class="paymentSection__copyIcon" id="copyPay"></ion-icon>
+          <p class="paymentSection__copyText" id="copyPayText"></p>
+        </div>
+        <button type="button" class="paymentSection__confirmBtn" id="confirmPay">Já Paguei</button>
+      </div>
+    </section>
+
+
+    <section class="main__viewNotifys" id="viewNotifys">     
+      <button class="viewNotifys__closeBtn" id="closeViewNotifys"><ion-icon name="close-outline"></ion-icon></button> 
+      <h2 class="viewNotifys__h2">NOTIFICAÇÕES</h2>
+      <div class="viewNotifys__div--1" id="loadNotifysDiv">
+
+
+        <article class="notifyCard">
+            <div class="notifyCard__div--1">
+              <div class="notifyCard__iconDiv">
+                <ion-icon name="alert-circle-outline"></ion-icon>
+              </div>
+              <p class="notifyCard__date">29/04</p>
+              <p class="notifyCard__hours">19:22</p>
+            </div>
+            <div class="notifyCard__div--2">
+              <p class="notifyCard__title">Compra pendente</p>
+              <p class="notifyCard__description">Faça o pagamento em até 10min para receber seu produto com frete 100% grátis.</p>
+            </div>        
+            <button class="notifyCard__closeNotify"><ion-icon name="close-outline"></ion-icon></button>              
+        </article>
+
+        <p class="loadNotifysDiv__noMoreNotifys">sem mais notificações</p>
+        
+      </div>      
+    </section>
     <section class="main__viewCart" id="viewCart">
       <button class="viewCart__close" id="closeCart"><ion-icon name="close-outline"></ion-icon></button>
       <h2 class="viewCart__h2">CARRINHO</h2>
@@ -67,7 +109,7 @@
       </div>
       <div class="viewCart__div--2">
         <p class="viewCart__price">TOTAL:<span class="viewCart__priceSpan" id="cartTotalPriceSpan">R$0</span></p>
-        <button class="viewCart__finalizeBuy">FINALIZAR COMPRA</button>
+        <button class="viewCart__finalizeBuy" id="cartFinalizeBuy">FINALIZAR COMPRA</button>
       </div>
     </section>
     <section class="main__viewProduct" id="viewProductSection">
@@ -93,7 +135,8 @@
           <p class="dataContainer__title" id="viewProductName">Blusa Colorida De Tricô Cropped Estilo Regata</p>
           <div class="dataContainer__div--3">
             <button type="button" class="dataContainer__buy">COMPRAR</button>
-            <button type="button" class="dataContainer__addCart" id="viewProductAddCart"><ion-icon name="cart-outline"></ion-icon></button>
+            <button type="button" class="dataContainer__addCart" id="viewProductAddCart"><ion-icon
+                name="cart-outline"></ion-icon></button>
           </div>
         </div>
       </div>
@@ -196,7 +239,7 @@
         <button class="home__options"><ion-icon name="options-outline"></ion-icon></button>
       </div>
       <div class="home__carroussel" id="homeCarroussel">
-        
+
       </div>
       <div class="home__filters">
         <button class="filterBtn">TOP</button>
@@ -347,7 +390,7 @@
         <div class="mobileNav__icon"><ion-icon name="cart-outline"></ion-icon></div>CARRINHO
       </button>
       <button class="mobileNav__btn">
-        <div class="mobileNav__icon"><ion-icon name="notifications-outline"></ion-icon></div>AVISOS
+        <div class="mobileNav__icon" id="mobileViewNotifys"><ion-icon name="notifications-outline"></ion-icon></div>AVISOS
       </button>
       <button class="mobileNav__btn">
         <div class="mobileNav__icon"><ion-icon name="person-outline"></ion-icon></div>PERFIL
@@ -362,8 +405,9 @@
   <script type="module" src="src/scripts/components/carroussel.js"></script>
   <script type="module" src="src/scripts/components/loadProductsDiv.js"></script>
   <script type="module" src="src/scripts/components/cart.js"></script>
+  <script type="module" src="src/scripts/components/notifys.js"></script>
   <script type="module" src="src/scripts/loadData.js"></script>
-  <script type="module" src="src/scripts/createItem.js"></script>  
+  <script type="module" src="src/scripts/createItem.js"></script>
 </body>
 
 </html>

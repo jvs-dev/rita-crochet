@@ -98,7 +98,7 @@
     }    
     .viewProductSection__imgContainer {
         width: 100vw;
-        height: 60vh;        
+        height: 75vh;        
         border-radius: 0px 0px 40px 40px;    
         box-shadow: none;
     }
@@ -142,4 +142,13 @@
     .cardCart__name {
         width: 55vw;
     }
+    .main__viewNotifys {
+        width: 100vw;
+        max-width: none;
+        border-radius: 0px;
+        transform: translate(100vw);
+    }
+    .viewNotifys__div--1::-webkit-scrollbar {
+        width: 6px;
+    }    
 }

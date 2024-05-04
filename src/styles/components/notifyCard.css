@@ -1,0 +1,96 @@
+.notifyCard {
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 4px);
+    border-bottom: solid 1px var(--gray);
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.notifyCard__div--1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.notifyCard__iconDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 5px 0px;
+    background: var(--warning);
+    color: var(--white);
+    font-size: 30px;    
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.notifyCard__date {
+    font-family: var(--poppins);
+    font-weight: 600;
+    color: var(--black);
+    font-size: 14px;    
+    text-transform: uppercase;
+    margin: 0px;
+    line-height: 125%; 
+}
+
+.notifyCard__hours {
+    font-family: var(--poppins);
+    font-weight: 600;
+    color: var(--black);
+    font-size: 14px;    
+    text-transform: uppercase;
+    margin: 0px;
+    line-height: 125%; 
+}
+
+.notifyCard__div--2 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.notifyCard__title {
+    font-family: var(--poppins);
+    font-weight: 700;
+    color: var(--warning);
+    font-size: 22px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.notifyCard__description {
+    font-family: var(--poppins);
+    font-weight: 600;
+    color: var(--black);
+    font-size: 14px;    
+    text-transform: uppercase;
+    margin: 0px;
+    line-height: 125%;
+}
+
+.notifyCard__closeNotify {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    text-align: center;
+    font-size: 20px;
+    color: var(--black);
+    background: transparent;
+    border-radius: 100%;
+    border: none;
+    outline-width: 0px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.notifyCard__closeNotify:hover {
+    background: #3b3b3b17;
+}
