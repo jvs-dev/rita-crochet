@@ -1,4 +1,5 @@
 import { addToCart } from "./components/cart"
+import { getUserDoc } from "./functions/UserData"
 import { productDataAndImgs } from "./functions/productData"
 import { verifyUserLogin } from "./functions/userAuth"
 
@@ -8,6 +9,13 @@ let pageTitle = document.getElementById("pageTitle")
 let perfilSection = document.getElementById("perfilSection")
 let viewPerfilBtn = document.getElementById("viewPerfilBtn")
 let createItemSection = document.getElementById("createItemSection")
+let requestSection = document.getElementById("requestSection")
+let perfilSctNameInput = document.getElementById("perfilSctNameInput")
+let perfilSctTelInput = document.getElementById("perfilSctTelInput")
+let perfilSctCPFInput = document.getElementById("perfilSctCPFInput")
+let perfilSctCEPInput = document.getElementById("perfilSctCEPInput")
+let perfilSctAdressInput = document.getElementById("perfilSctAdressInput")
+let perfilSctStreetInput = document.getElementById("perfilSctStreetInput")
 
 function disableAllPages() {
     homeSection.style.display = "none"
@@ -27,6 +35,14 @@ window.addEventListener("load", () => {
                 disableAllPages()
                 perfilSection.style.display = "flex"
                 pageTitle.textContent = "PERFIL"
+                getUserDoc(result.email).then(userData => {                    
+                    perfilSctNameInput.value = `${userData.name}`
+                    perfilSctTelInput.value = `${userData.phone}`
+                    perfilSctCPFInput.value = `${userData.cpf}`
+                    perfilSctCEPInput.value = `${userData.cep}`
+                    perfilSctAdressInput.value = `${userData.address}`
+                    perfilSctStreetInput.value = `${userData.street}`
+                })
                 viewPerfilBtn.onclick = function () {
                     window.location.href = `${window.location.origin}`
                 }
@@ -41,6 +57,18 @@ window.addEventListener("load", () => {
                 disableAllPages()
                 createItemSection.style.display = "flex"
                 pageTitle.textContent = "Criar"
+                viewPerfilBtn.onclick = function () {
+                    window.location.href = `${window.location.origin}`
+                }
+            }
+        })
+    } else if (`${window.location.hash}`.replace("#", "") == "requests") {
+        verifyUserLogin().then(result => {
+            if (result != undefined) {
+                viewPerfilBtn.children[0].name = "home-outline"
+                disableAllPages()
+                requestSection.style.display = "flex"
+                pageTitle.textContent = "Pedidos"
                 viewPerfilBtn.onclick = function () {
                     window.location.href = `${window.location.origin}`
                 }
@@ -111,6 +139,14 @@ window.addEventListener("hashchange", () => {
                 disableAllPages()
                 perfilSection.style.display = "flex"
                 pageTitle.textContent = "PERFIL"
+                getUserDoc(result.email).then(userData => {                    
+                    perfilSctNameInput.value = `${userData.name}`
+                    perfilSctTelInput.value = `${userData.phone}`
+                    perfilSctCPFInput.value = `${userData.cpf}`
+                    perfilSctCEPInput.value = `${userData.cep}`
+                    perfilSctAdressInput.value = `${userData.address}`
+                    perfilSctStreetInput.value = `${userData.street}`
+                })
                 viewPerfilBtn.onclick = function () {
                     window.location.href = `${window.location.origin}`
                 }

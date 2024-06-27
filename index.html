@@ -26,11 +26,14 @@
   <link rel="stylesheet" href="src/styles/components/paymentSection.css">
   <link rel="stylesheet" href="src/styles/components/notifys.css">
   <link rel="stylesheet" href="src/styles/components/notifyCard.css">
+  <link rel="stylesheet" href="src/styles/components/completeUserData.css">
+  <link rel="stylesheet" href="src/styles/components/cardRequest.css">
   <link rel="stylesheet" href="src/styles/pages/viewProduct.css">
   <link rel="stylesheet" href="src/styles/pages/home.css">
   <link rel="stylesheet" href="src/styles/pages/perfil.css">
   <link rel="stylesheet" href="src/styles/pages/createItem.css">
-  <link rel="stylesheet" href="src/styles/mobile.css">  
+  <link rel="stylesheet" href="src/styles/pages/requests.css">
+  <link rel="stylesheet" href="src/styles/mobile.css">
 </head>
 
 <body>
@@ -75,31 +78,79 @@
       </div>
     </section>
 
+    <section class="main__completeUserData" id="completeUserDataSection">
+      <div class="completeUserData__div">
+        <h1 class="completeUserData__h1">Complete suas informações</h1>
+        <div class="completeUserData__div--2">
+          <label for="" class="completeUserData__label">
+            <fieldset class="completeUserData__fieldset">
+              <legend class="completeUserData__legend">NOME COMPLETO</legend>
+              <input type="text" class="completeUserData__input" placeholder="Digite seu nome" id="completeDataName">
+            </fieldset>
+          </label>
+          <label for="" class="completeUserData__label">
+            <fieldset class="completeUserData__fieldset">
+              <legend class="completeUserData__legend">CPF</legend>
+              <input type="number" class="completeUserData__input" placeholder="000.000.000-00" id="completeDataCPF">
+            </fieldset>
+          </label>
+        </div>
+        <label for="" class="completeUserData__label">
+          <fieldset class="completeUserData__fieldset">
+            <legend class="completeUserData__legend">TELEFONE</legend>
+            <input type="number" class="completeUserData__input" placeholder="(00)000000-0000" id="completeDataTel">
+          </fieldset>
+        </label>
+        <div class="completeUserData__div--2">
+          <label for="" class="completeUserData__label">
+            <fieldset class="completeUserData__fieldset">
+              <legend class="completeUserData__legend">Bairro</legend>
+              <input type="text" class="completeUserData__input" placeholder="Paripe" id="completeDataAdress">
+            </fieldset>
+          </label>
+          <label for="" class="completeUserData__label">
+            <fieldset class="completeUserData__fieldset">
+              <legend class="completeUserData__legend">Rua</legend>
+              <input type="text" class="completeUserData__input" placeholder="Rua da xxxx" id="completeDataStreet">
+            </fieldset>
+          </label>
+        </div>
+        <label for="" class="completeUserData__label">
+          <fieldset class="completeUserData__fieldset">
+            <legend class="completeUserData__legend">CEP</legend>
+            <input type="number" class="completeUserData__input" placeholder="00000-000" id="completeDataCEP">
+          </fieldset>
+        </label>
+        <button type="button" class="completeUserData__confirmBtn" id="confirmCompleteUserData">CONTINUAR</button>
+      </div>
+    </section>
 
-    <section class="main__viewNotifys" id="viewNotifys">     
-      <button class="viewNotifys__closeBtn" id="closeViewNotifys"><ion-icon name="close-outline"></ion-icon></button> 
+
+    <section class="main__viewNotifys" id="viewNotifys">
+      <button class="viewNotifys__closeBtn" id="closeViewNotifys"><ion-icon name="close-outline"></ion-icon></button>
       <h2 class="viewNotifys__h2">NOTIFICAÇÕES</h2>
       <div class="viewNotifys__div--1" id="loadNotifysDiv">
 
 
         <article class="notifyCard">
-            <div class="notifyCard__div--1">
-              <div class="notifyCard__iconDiv">
-                <ion-icon name="alert-circle-outline"></ion-icon>
-              </div>
-              <p class="notifyCard__date">29/04</p>
-              <p class="notifyCard__hours">19:22</p>
+          <div class="notifyCard__div--1">
+            <div class="notifyCard__iconDiv">
+              <ion-icon name="alert-circle-outline"></ion-icon>
             </div>
-            <div class="notifyCard__div--2">
-              <p class="notifyCard__title">Compra pendente</p>
-              <p class="notifyCard__description">Faça o pagamento em até 10min para receber seu produto com frete 100% grátis.</p>
-            </div>        
-            <button class="notifyCard__closeNotify"><ion-icon name="close-outline"></ion-icon></button>              
+            <p class="notifyCard__date">29/04</p>
+            <p class="notifyCard__hours">19:22</p>
+          </div>
+          <div class="notifyCard__div--2">
+            <p class="notifyCard__title">Compra pendente</p>
+            <p class="notifyCard__description">Faça o pagamento em até 10min para receber seu produto com frete 100%
+              grátis.</p>
+          </div>
+          <button class="notifyCard__closeNotify"><ion-icon name="close-outline"></ion-icon></button>
         </article>
 
         <p class="loadNotifysDiv__noMoreNotifys">sem mais notificações</p>
-        
-      </div>      
+
+      </div>
     </section>
     <section class="main__viewCart" id="viewCart">
       <button class="viewCart__close" id="closeCart"><ion-icon name="close-outline"></ion-icon></button>
@@ -268,29 +319,43 @@
         <article class="userDataDiv__article">
           <p class="userDataDiv__p">Nome Completo</p>
           <div class="userDataDiv__div">
-            <input class="userDataDiv__input" type="text" placeholder="João Vitor Santana" disabled>
-            <button class="userDataDiv__btn" type="button">Alterar</button>
+            <input class="userDataDiv__input" type="text" disabled id="perfilSctNameInput">
+            <button class="userDataDiv__btn" type="button" id="perfilSctNameInputEdit">Alterar</button>
           </div>
         </article>
         <article class="userDataDiv__article">
           <p class="userDataDiv__p">Telefone</p>
           <div class="userDataDiv__div">
-            <input class="userDataDiv__input" type="tel" disabled>
-            <button class="userDataDiv__btn" type="button">Alterar</button>
-          </div>
-        </article>
-        <article class="userDataDiv__article">
-          <p class="userDataDiv__p">Endereço</p>
-          <div class="userDataDiv__div">
-            <input class="userDataDiv__input" type="text" disabled>
-            <button class="userDataDiv__btn" type="button">Alterar</button>
+            <input class="userDataDiv__input" type="tel" disabled id="perfilSctTelInput">
+            <button class="userDataDiv__btn" type="button" id="perfilSctTelInputEdit">Alterar</button>
           </div>
         </article>
         <article class="userDataDiv__article">
           <p class="userDataDiv__p">CPF</p>
           <div class="userDataDiv__div">
-            <input class="userDataDiv__input" type="number" disabled>
-            <button class="userDataDiv__btn" type="button">Alterar</button>
+            <input class="userDataDiv__input" type="number" disabled id="perfilSctCPFInput">
+            <button class="userDataDiv__btn" type="button" id="perfilSctCPFInputEdit">Alterar</button>
+          </div>
+        </article>
+        <article class="userDataDiv__article">
+          <p class="userDataDiv__p">CEP</p>
+          <div class="userDataDiv__div">
+            <input class="userDataDiv__input" type="number" disabled id="perfilSctCEPInput">
+            <button class="userDataDiv__btn" type="button" id="perfilSctCEPInputEdit">Alterar</button>
+          </div>
+        </article>
+        <article class="userDataDiv__article">
+          <p class="userDataDiv__p">Bairro</p>
+          <div class="userDataDiv__div">
+            <input class="userDataDiv__input" type="text" disabled id="perfilSctAdressInput">
+            <button class="userDataDiv__btn" type="button" id="perfilSctAdressInputEdit">Alterar</button>
+          </div>
+        </article>
+        <article class="userDataDiv__article">
+          <p class="userDataDiv__p">Rua</p>
+          <div class="userDataDiv__div">
+            <input class="userDataDiv__input" type="text" disabled id="perfilSctStreetInput">
+            <button class="userDataDiv__btn" type="button" id="perfilSctStreetInputEdit">Alterar</button>
           </div>
         </article>
         <button class="userDataDiv__SignOut" id="exitAccount">Sair da conta</button>
@@ -382,6 +447,106 @@
         </div>
       </div>
     </section>
+    <section class="main__request" id="requestSection">
+
+      
+      <article class="requestCard">
+        <ion-icon class="requestCard__moreInfo" name="ellipsis-vertical-outline"></ion-icon>
+        <div class="requestCard__div--1">
+          <img src="" alt="" class="requestCard__userPhoto">
+          <div class="requestCard__div--2">
+            <p class="requestCard__userName">João Vitor Santana</p>
+            <p class="requestCard__address">3A Travessa da rodagem, Periperi, Salvador.</p>
+            <p class="requestCard__tell">71982581220</p>
+          </div>
+        </div>
+        <p class="requestCard__p">COMPRADOS:</p>
+        <div class="requestCard__div--3">
+          <div class="requestCard__div--4">
+            <img src="" alt="" class="requestCard__itemImg">
+            <p class="requestCard__itemName">ASJDAS ASKDjKAS</p>
+            <p class="requestCard__itemSize">Tamanho: M</p>
+            <p class="requestCard__quanty">Quantidade: 1</p>
+          </div>
+          <div class="requestCard__div--4">
+            <img src="" alt="" class="requestCard__itemImg">
+            <p class="requestCard__itemName">ASJDAS ASKDjKAS</p>
+            <p class="requestCard__itemSize">Tamanho: M</p>
+            <p class="requestCard__quanty">Quantidade: 1</p>
+          </div>
+        </div>
+        <div class="requestCard__div--5">
+          <button class="requestCard__btn btn--recuse" type="button">Fazer reembolso</button>
+          <button class="requestCard__btn btn--accept" type="button">Itens A CAMINHO</button>
+        </div>
+      </article>
+
+
+      <article class="requestCard">
+        <ion-icon class="requestCard__moreInfo" name="ellipsis-vertical-outline"></ion-icon>
+        <div class="requestCard__div--1">
+          <img src="" alt="" class="requestCard__userPhoto">
+          <div class="requestCard__div--2">
+            <p class="requestCard__userName">João Vitor Santana</p>
+            <p class="requestCard__address">3A Travessa da rodagem, Periperi, Salvador.</p>
+            <p class="requestCard__tell">71982581220</p>
+          </div>
+        </div>
+        <p class="requestCard__p">COMPRADOS:</p>
+        <div class="requestCard__div--3">
+          <div class="requestCard__div--4">
+            <img src="" alt="" class="requestCard__itemImg">
+            <p class="requestCard__itemName">ASJDAS ASKDjKAS</p>
+            <p class="requestCard__itemSize">Tamanho: M</p>
+            <p class="requestCard__quanty">Quantidade: 1</p>
+          </div>
+          <div class="requestCard__div--4">
+            <img src="" alt="" class="requestCard__itemImg">
+            <p class="requestCard__itemName">ASJDAS ASKDjKAS</p>
+            <p class="requestCard__itemSize">Tamanho: M</p>
+            <p class="requestCard__quanty">Quantidade: 1</p>
+          </div>
+        </div>
+        <div class="requestCard__div--5">
+          <button class="requestCard__btn btn--recuse" type="button">Fazer reembolso</button>
+          <button class="requestCard__btn btn--accept" type="button">Itens A CAMINHO</button>
+        </div>
+      </article>
+
+
+      <article class="requestCard">
+        <ion-icon class="requestCard__moreInfo" name="ellipsis-vertical-outline"></ion-icon>
+        <div class="requestCard__div--1">
+          <img src="" alt="" class="requestCard__userPhoto">
+          <div class="requestCard__div--2">
+            <p class="requestCard__userName">João Vitor Santana</p>
+            <p class="requestCard__address">3A Travessa da rodagem, Periperi, Salvador.</p>
+            <p class="requestCard__tell">71982581220</p>
+          </div>
+        </div>
+        <p class="requestCard__p">COMPRADOS:</p>
+        <div class="requestCard__div--3">
+          <div class="requestCard__div--4">
+            <img src="" alt="" class="requestCard__itemImg">
+            <p class="requestCard__itemName">ASJDAS ASKDjKAS</p>
+            <p class="requestCard__itemSize">Tamanho: M</p>
+            <p class="requestCard__quanty">Quantidade: 1</p>
+          </div>
+          <div class="requestCard__div--4">
+            <img src="" alt="" class="requestCard__itemImg">
+            <p class="requestCard__itemName">ASJDAS ASKDjKAS</p>
+            <p class="requestCard__itemSize">Tamanho: M</p>
+            <p class="requestCard__quanty">Quantidade: 1</p>
+          </div>
+        </div>
+        <div class="requestCard__div--5">
+          <button class="requestCard__btn btn--recuse" type="button">Fazer reembolso</button>
+          <button class="requestCard__btn btn--accept" type="button">Itens A CAMINHO</button>
+        </div>
+      </article>
+
+      
+    </section>
     <nav class="main__mobileNav">
       <button class="mobileNav__btn">
         <div class="mobileNav__icon active"><i class="bi bi-house"></i></div>HOME
@@ -390,10 +555,11 @@
         <div class="mobileNav__icon"><ion-icon name="cart-outline"></ion-icon></div>CARRINHO
       </button>
       <button class="mobileNav__btn">
-        <div class="mobileNav__icon" id="mobileViewNotifys"><ion-icon name="notifications-outline"></ion-icon></div>AVISOS
+        <div class="mobileNav__icon" id="mobileViewNotifys"><ion-icon name="notifications-outline"></ion-icon></div>
+        AVISOS
       </button>
       <button class="mobileNav__btn">
-        <div class="mobileNav__icon"><ion-icon name="person-outline"></ion-icon></div>PERFIL
+        <div class="mobileNav__icon" id="mobileViewPerfil"><ion-icon name="person-outline"></ion-icon></div>PERFIL
       </button>
     </nav>
   </main>
@@ -406,6 +572,8 @@
   <script type="module" src="src/scripts/components/loadProductsDiv.js"></script>
   <script type="module" src="src/scripts/components/cart.js"></script>
   <script type="module" src="src/scripts/components/notifys.js"></script>
+  <script type="module" src="src/scripts/components/completeUserData.js"></script>
+  <script type="module" src="src/scripts/components/requests.js"></script>
   <script type="module" src="src/scripts/loadData.js"></script>
   <script type="module" src="src/scripts/createItem.js"></script>
 </body>

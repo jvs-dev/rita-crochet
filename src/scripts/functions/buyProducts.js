@@ -9,6 +9,8 @@ import { calcTotal } from "./calcCartValue";
 import QRCode from 'qrcode';
 import { activeLoading1, desactiveLoading1 } from "./loading1";
 import { createNotify } from "./createNotify";
+import { getUserDoc } from "./UserData";
+import { completeUserData } from "../components/completeUserData";
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const analytics = getAnalytics(app);
@@ -109,34 +111,42 @@ export async function buyThisProducts(selectedsArr) {
     activeLoading1()
     verifyUserLogin().then(async (user) => {
         if (user != undefined) {
-            selectedsArr.forEach(element => {
-                if (element.select == true) {
-                    newItemsArray.push(element)
+            getUserDoc(user.email).then(async (userData) => {
+                if (userData.address == "" || userData.cpf == "" || userData.phone == "" || userData.cep == "" || userData.street == "") {                    
+                    completeUserData(user.email, userData, selectedsArr)
+                    desactiveLoading1()
+                } else {
+                    selectedsArr.forEach(element => {
+                        if (element.select == true) {
+                            newItemsArray.push(element)
+                        }
+                    });
+                    createPay(`${user.email}`, calcTotal(selectedsArr)).then(async (payRes) => {
+                        let docRef = await addDoc(collection(db, "payments"), {
+                            payerEmail: `${user.email}`,
+                            paymentStatus: "pending",
+                            totalAmount: calcTotal(selectedsArr),
+                            items: newItemsArray,
+                            paymentId: payRes.result.id,
+                            inRoute: false
+                        });
+                        copyPayText.textContent = `${payRes.result.point_of_interaction.transaction_data.qr_code}`
+                        generateQRCode(payRes.result.point_of_interaction.transaction_data.qr_code).then((qrCodeLink) => {
+                            paymentQRCode.src = `${qrCodeLink}`
+                        })
+                        paymentSection.style.display = "flex"
+                        setTimeout(() => {
+                            paymentSection.style.opacity = "1"
+                        }, 1);
+                        desactiveLoading1()
+                        console.log("Document written with ID: ", docRef.id);
+                        console.log(payRes);
+                        createNotify(user.email, "Compra pendente", "Faça o pagamento em até 10min para receber seu produto com frete 100% grátis.", false, "red", "pending payment", payRes.result.id)
+                    })
                 }
-            });
-            createPay(`${user.email}`, calcTotal(selectedsArr)).then(async (payRes) => {
-                let docRef = await addDoc(collection(db, "payments"), {
-                    payerEmail: `${user.email}`,
-                    paymentStatus: "pending",
-                    totalAmount: calcTotal(selectedsArr),
-                    items: newItemsArray,
-                    paymentId: payRes.result.id
-                });
-                copyPayText.textContent = `${payRes.result.point_of_interaction.transaction_data.qr_code}`
-                generateQRCode(payRes.result.point_of_interaction.transaction_data.qr_code).then((qrCodeLink) => {
-                    paymentQRCode.src = `${qrCodeLink}`
-                })
-                paymentSection.style.display = "flex"
-                setTimeout(() => {
-                    paymentSection.style.opacity = "1"
-                }, 1);
-                desactiveLoading1()
-                console.log("Document written with ID: ", docRef.id);
-                console.log(payRes);
-                createNotify(user.email, "Compra pendente", "Faça o pagamento em até 10min para receber seu produto com frete 100% grátis.", false, "red", "pending payment", payRes.result.id)
             })
         } else {
-            copyPayText.textContent = `${payRes.result.point_of_interaction.transaction_data.qr_code}`
+            /* copyPayText.textContent = `${payRes.result.point_of_interaction.transaction_data.qr_code}`
             generateQRCode(payRes.result.point_of_interaction.transaction_data.qr_code).then((qrCodeLink) => {
                 paymentQRCode.src = `${qrCodeLink}`
             })
@@ -144,7 +154,7 @@ export async function buyThisProducts(selectedsArr) {
             setTimeout(() => {
                 paymentSection.style.opacity = "1"
             }, 1);
-            desactiveLoading1()
+            desactiveLoading1() */
         }
     })
 }

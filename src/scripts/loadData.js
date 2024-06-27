@@ -4,6 +4,7 @@ import { signIn, signOutUser, verifyUserLogin } from "./functions/userAuth";
 let viewNotifysBtn = document.getElementById("viewNotifysBtn")
 let viewCartBtn = document.getElementById("viewCartBtn")
 let viewPerfilBtn = document.getElementById("viewPerfilBtn")
+let mobileViewPerfil = document.getElementById("mobileViewPerfil")
 let loginBtn = document.getElementById("loginBtn")
 let perfil_Photo = document.getElementById("perfil_Photo")
 let exitAccount = document.getElementById("exitAccount")
@@ -49,6 +50,9 @@ function initLoad() {
             viewPerfilBtn.style.display = "flex"
             perfil_Photo.src = `${result.photoURL}`
             viewPerfilBtn.onclick = function () {
+                window.location.href = `${window.location.origin}#perfil`
+            }
+            mobileViewPerfil.onclick = function () {
                 window.location.href = `${window.location.origin}#perfil`
             }
             exitAccount.onclick = function () {
