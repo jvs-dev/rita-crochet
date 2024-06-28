@@ -1,5 +1,7 @@
 import { addToCart } from "./components/cart"
 import { getUserDoc } from "./functions/UserData"
+import { getInRouteByEmail } from "./functions/inRoute"
+import { getPaymentByEmail, getPreparingByEmail } from "./functions/payments"
 import { productDataAndImgs } from "./functions/productData"
 import { verifyUserLogin } from "./functions/userAuth"
 
@@ -16,6 +18,8 @@ let perfilSctCPFInput = document.getElementById("perfilSctCPFInput")
 let perfilSctCEPInput = document.getElementById("perfilSctCEPInput")
 let perfilSctAdressInput = document.getElementById("perfilSctAdressInput")
 let perfilSctStreetInput = document.getElementById("perfilSctStreetInput")
+let perfilInRoute = document.getElementById("perfil_inRoute")
+let perfilPreparing = document.getElementById("perfil_preparing")
 
 function disableAllPages() {
     homeSection.style.display = "none"
@@ -35,13 +39,23 @@ window.addEventListener("load", () => {
                 disableAllPages()
                 perfilSection.style.display = "flex"
                 pageTitle.textContent = "PERFIL"
-                getUserDoc(result.email).then(userData => {                    
+                getUserDoc(result.email).then(userData => {
                     perfilSctNameInput.value = `${userData.name}`
                     perfilSctTelInput.value = `${userData.phone}`
                     perfilSctCPFInput.value = `${userData.cpf}`
                     perfilSctCEPInput.value = `${userData.cep}`
                     perfilSctAdressInput.value = `${userData.address}`
                     perfilSctStreetInput.value = `${userData.street}`
+                })
+                getInRouteByEmail(result.email).then(buyedData => {
+                    if (buyedData.length > 0) {
+                        perfilInRoute.insertAdjacentHTML("beforeend", `<span class="perfilSection__div__span">${buyedData.length}</span>`)
+                    }
+                })
+                getPreparingByEmail(result.email).then(preparingData => {
+                    if (preparingData.length > 0) {
+                        perfilPreparing.insertAdjacentHTML("beforeend", `<span class="perfilSection__div__span">${preparingData.length}</span>`)
+                    }
                 })
                 viewPerfilBtn.onclick = function () {
                     window.location.href = `${window.location.origin}`
@@ -139,13 +153,23 @@ window.addEventListener("hashchange", () => {
                 disableAllPages()
                 perfilSection.style.display = "flex"
                 pageTitle.textContent = "PERFIL"
-                getUserDoc(result.email).then(userData => {                    
+                getUserDoc(result.email).then(userData => {
                     perfilSctNameInput.value = `${userData.name}`
                     perfilSctTelInput.value = `${userData.phone}`
                     perfilSctCPFInput.value = `${userData.cpf}`
                     perfilSctCEPInput.value = `${userData.cep}`
                     perfilSctAdressInput.value = `${userData.address}`
                     perfilSctStreetInput.value = `${userData.street}`
+                })
+                getInRouteByEmail(result.email).then(buyedData => {
+                    if (buyedData.length > 0) {
+                        perfilInRoute.insertAdjacentHTML("beforeend", `<span class="perfilSection__div__span">${buyedData.length}</span>`)
+                    }
+                })
+                getPreparingByEmail(result.email).then(preparingData => {
+                    if (preparingData.length > 0) {
+                        perfilPreparing.insertAdjacentHTML("beforeend", `<span class="perfilSection__div__span">${preparingData.length}</span>`)
+                    }
                 })
                 viewPerfilBtn.onclick = function () {
                     window.location.href = `${window.location.origin}`

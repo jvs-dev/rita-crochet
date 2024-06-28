@@ -65,6 +65,17 @@
     cursor: pointer;
 }
 
+.home__searchSection {
+    width: 100%;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px 5px;
+    gap: 20px 0px;
+    margin-top: 20px;
+}
+
 .home__carroussel {
     width: 100%;
     display: flex;

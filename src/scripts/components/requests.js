@@ -76,15 +76,21 @@ function loadRequests() {
                                         }
                                     } else {
                                         getInRoute(payment[1]).then(res => {
+                                            let deliveredBtn = document.createElement("button")
                                             card.children[4].insertAdjacentHTML("beforeend", `
-                                            <div class="requestCard__inRoute__div">
-                                                <div class="requestCard__inRoute__div--2">
-                                                    <lord-icon class="requestCard__inRoute__icon" src="https://cdn.lordicon.com/zzjjvkam.json" trigger="hover" colors="primary:#1f1f1f,secondary:#1f1f1f"></lord-icon>
-                                                </div>
-                                                <p class="requestCard__inRoute__description">${res.status}</p>                                        
-                                                <p class="requestCard__inRoute__date">${res.date}</p>
-                                            </div>
-                                        `)
+                                                <div class="requestCard__inRoute__div">
+                                                    <div class="requestCard__inRoute__div--2">
+                                                        <lord-icon class="requestCard__inRoute__icon" src="https://cdn.lordicon.com/zzjjvkam.json" trigger="hover" colors="primary:#1f1f1f,secondary:#1f1f1f"></lord-icon>
+                                                    </div>
+                                                    <p class="requestCard__inRoute__description">${res.status}</p>                                        
+                                                    <p class="requestCard__inRoute__date">${res.date}</p>
+                                                </div>`)
+                                            card.children[4].insertAdjacentElement("afterend", deliveredBtn)
+                                            deliveredBtn.classList.add("requestCard__inRoute__deliveredBtn")
+                                            deliveredBtn.textContent = "Entregue"
+                                            deliveredBtn.onclick = function () {
+                                                
+                                            }
                                         })
                                     }
                                 })

@@ -285,9 +285,12 @@
       <div class="home__div">
         <div class="home__searchDiv">
           <ion-icon class="searchDiv__icon" name="search-outline"></ion-icon>
-          <input class="searchDiv__input" type="text" placeholder="Pesquisar">
+          <input class="searchDiv__input" id="searchInput" type="text" placeholder="Pesquisar">
         </div>
         <button class="home__options"><ion-icon name="options-outline"></ion-icon></button>
+      </div>
+      <div class="home__searchSection" id="homeSearchSection">
+
       </div>
       <div class="home__carroussel" id="homeCarroussel">
 
@@ -307,8 +310,8 @@
       <div class="perfilSection__div">
         <img class="perfilSection__photo" id="perfil_Photo" src="" alt="">
         <div class="perfilSection__div__div">
-          <button class="perfilSection__div__btn" type="button"><i class="bi bi-box-seam"></i></button>
-          <button class="perfilSection__div__btn" type="button"><lord-icon class="perfilSection__div__lordIcon"
+          <button class="perfilSection__div__btn" id="perfil_preparing" type="button"><i class="bi bi-box-seam"></i></button>
+          <button class="perfilSection__div__btn" id="perfil_inRoute" type="button"><lord-icon class="perfilSection__div__lordIcon"
               src="https://cdn.lordicon.com/zzjjvkam.json" trigger="hover" colors="primary:#1f1f1f,secondary:#1f1f1f">
             </lord-icon></button>
           <button type="button" class="perfilSection__div__btn"><ion-icon name="star-outline"></ion-icon></button>
@@ -574,6 +577,7 @@
   <script type="module" src="src/scripts/components/notifys.js"></script>
   <script type="module" src="src/scripts/components/completeUserData.js"></script>
   <script type="module" src="src/scripts/components/requests.js"></script>
+  <script type="module" src="src/scripts/components/search.js"></script>
   <script type="module" src="src/scripts/loadData.js"></script>
   <script type="module" src="src/scripts/createItem.js"></script>
 </body>

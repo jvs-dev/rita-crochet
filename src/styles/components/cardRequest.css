@@ -174,8 +174,12 @@
     align-items: center;
     justify-content: center;
     background: var(--gray);
-    padding: 20px;
+    padding: 14px;
     border-radius: 100%;
+}
+.requestCard__inRoute__div lord-icon {
+    height: 30px;
+    width: 30px;
 }
 
 .requestCard__inRoute__description {
@@ -192,4 +196,18 @@
     font-size: 14px;
     font-weight: 400;
     margin: 0px;
+}
+
+.requestCard__inRoute__deliveredBtn {
+    color: var(--white);
+    background: var(--green);
+    padding: 4px 20px;
+    border-radius: 10px;
+    font-family: var(--poppins);
+    font-size: 16px;
+    font-weight: 500;
+    outline-width: 0px;
+    border: 0px;
+    margin: 20px 0px 0px 0px;
+    cursor: pointer;
 }
